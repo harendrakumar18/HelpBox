@@ -1,0 +1,19 @@
+.env
+.env.backup_*
+.env.*.backup
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.huggingface/
+.cache/
+.DS_Store
+
+# Backups (contain database dumps, do not commit)
+data/backups/
+*.sql
+
+# Keep the folder structure but do not commit real/company PDFs.
+data/trials/**/*.pdf

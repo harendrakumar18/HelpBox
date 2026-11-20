@@ -1,0 +1,114 @@
+INFO:     Started server process [13926]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     115.244.252.166:0 - "GET /api/sync/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40726 - "GET /health HTTP/1.1" 200 OK
+[Helpbox Sync] Trial: Trial_101 | Total Files: 1 | Unchanged: 1 | New: 0 | Modified: 0 | Withdrawn: 0 | Failed: 0 | Duration: 45.83ms | Peak RSS: 625.1MB
+[Helpbox Sync] Trial: Trial_103 | Total Files: 4 | Unchanged: 4 | New: 0 | Modified: 0 | Withdrawn: 0 | Failed: 0 | Duration: 99.32ms | Peak RSS: 632.5MB
+[Helpbox Background Scanner] Cycle #1 complete | Trials: 2 | New: 0 | Mod: 0 | Withdrawn: 0 | Unchanged: 5 | Duration: 188.53ms
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 4690.28it/s]
+INFO:     115.244.252.166:0 - "GET / HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/sync/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_103/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_103/documents HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_101/documents HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_101/status HTTP/1.1" 200 OK
+[Helpbox Sync] Trial: Trial_101 | Total Files: 1 | Unchanged: 1 | New: 0 | Modified: 0 | Withdrawn: 0 | Failed: 0 | Duration: 6.39ms | Peak RSS: 1151.4MB
+INFO:     115.244.252.166:0 - "POST /api/trials/Trial_101/refresh HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "POST /api/chat/stream HTTP/1.1" 200 OK
+[Helpbox Sync] Trial: Trial_101 | Total Files: 1 | Unchanged: 1 | New: 0 | Modified: 0 | Withdrawn: 0 | Failed: 0 | Duration: 10.65ms | Peak RSS: 1160.6MB
+INFO:     115.244.252.166:0 - "POST /api/trials/Trial_101/refresh HTTP/1.1" 200 OK
+[Helpbox Sync] Trial: Trial_101 | Total Files: 1 | Unchanged: 1 | New: 0 | Modified: 0 | Withdrawn: 0 | Failed: 0 | Duration: 7.51ms | Peak RSS: 1160.6MB
+INFO:     115.244.252.166:0 - "POST /api/trials/Trial_101/refresh HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_101/documents HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_101/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/sync/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_103/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_103/documents HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/sync/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_101/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_101/documents HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_103/documents HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_103/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/sync/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_101/documents HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_101/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_103/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_103/documents HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/sync/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_101/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_101/documents HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_103/documents HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_103/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/sync/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "POST /api/chat/stream HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_101/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/sync/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_101/documents HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_103/documents HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_103/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/sync/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_101/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_101/documents HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/sync/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_101/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_101/documents HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_101/documents HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_101/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_103/documents HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/sync/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_103/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/sync/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_101/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_101/documents HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_101/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_101/documents HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/sync/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_101/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_101/documents HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_101/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_101/documents HTTP/1.1" 200 OK
+[Helpbox Sync] Trial: Trial_101 | Total Files: 1 | Unchanged: 1 | New: 0 | Modified: 0 | Withdrawn: 0 | Failed: 0 | Duration: 6.11ms | Peak RSS: 1166.7MB
+INFO:     115.244.252.166:0 - "POST /api/trials/Trial_101/refresh HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_103/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_103/documents HTTP/1.1" 200 OK
+[Helpbox Sync] Trial: Trial_101 | Total Files: 1 | Unchanged: 1 | New: 0 | Modified: 0 | Withdrawn: 0 | Failed: 0 | Duration: 6.68ms | Peak RSS: 1166.7MB
+[Helpbox Sync] Trial: Trial_103 | Total Files: 4 | Unchanged: 4 | New: 0 | Modified: 0 | Withdrawn: 0 | Failed: 0 | Duration: 6.06ms | Peak RSS: 1166.7MB
+[Helpbox Background Scanner] Cycle #2 complete | Trials: 2 | New: 0 | Mod: 0 | Withdrawn: 0 | Unchanged: 5 | Duration: 16.79ms
+INFO:     115.244.252.166:0 - "GET /api/sync/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_101/documents HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_101/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_103/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_103/documents HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/sync/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_101/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_101/documents HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_103/documents HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_103/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/sync/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/sync/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_101/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_101/documents HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_103/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_103/documents HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_101/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/sync/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_101/documents HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/sync/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_101/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_101/documents HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_101/documents HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_101/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_103/documents HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/trials/Trial_103/status HTTP/1.1" 200 OK
+INFO:     115.244.252.166:0 - "GET /api/sync/status HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [13926]
+/home/codespace/.python/current/lib/python3.14/multiprocessing/resource_tracker.py:396: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/loky-13926-7a8m3sxq'}
+  warnings.warn(

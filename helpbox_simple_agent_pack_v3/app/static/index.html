@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Helpbox — Clinical Trial PDF Workspace</title>
+  <link rel="stylesheet" href="/static/app.css" />
+</head>
+<body>
+  <div class="app-container">
+    <!-- Top Header -->
+    <header class="app-header">
+      <div class="header-left">
+        <span class="app-logo">HELPBOX</span>
+        <span class="header-divider">|</span>
+        <span class="header-context">Trial Document Intelligence</span>
+      </div>
+      <div class="header-right">
+        <span class="sync-badge" id="sync-badge" title="Continuous Background Synchronization">Sync: Active (120s)</span>
+        <span class="env-badge" id="env-badge">Local Workspace</span>
+      </div>
+    </header>
+
+    <div class="app-body">
+      <!-- Left Sidebar: Trial Selection -->
+      <aside class="sidebar" aria-label="Trial Navigation">
+        <div class="sidebar-header">
+          <span class="sidebar-title">Clinical Trials</span>
+          <button id="btn-refresh-trials" class="btn-icon" title="Scan trial folders" aria-label="Refresh trial list">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/>
+            </svg>
+          </button>
+        </div>
+        <div class="sidebar-search">
+          <input type="text" id="trial-search" placeholder="Filter trials..." aria-label="Filter trials" />
+        </div>
+        <nav class="trial-list-container">
+          <ul id="trial-list" class="trial-list" role="listbox">
+            <!-- Populated dynamically -->
+            <li class="empty-state-item">Loading trials...</li>
+          </ul>
+        </nav>
+        <div class="sidebar-footer">
+          <span class="storage-root" id="storage-root">Scope: data/trials/</span>
+        </div>
+      </aside>
+
+      <!-- Main Workspace Area -->
+      <main class="main-workspace" id="main-workspace">
+        <!-- Unselected state -->
+        <div id="no-trial-selected" class="workspace-empty">
+          <div class="empty-card">
+            <h3>No Trial Selected</h3>
+            <p>Select a clinical trial from the left sidebar to view its documents and access the in-trial AI Assistant.</p>
+          </div>
+        </div>
+
+        <!-- Selected Trial Workspace -->
+        <div id="trial-workspace" class="trial-workspace hidden">
+          <!-- Trial Workspace Header -->
+          <div class="workspace-header">
+            <div class="breadcrumb">
+              <span>Trials</span>
+              <span class="breadcrumb-separator">/</span>
+              <span id="breadcrumb-trial-name" class="breadcrumb-current">Trial_101</span>
+            </div>
+            <div class="workspace-title-row">
+              <h1 id="selected-trial-title" class="workspace-title">Trial_101</h1>
+              <div class="trial-header-actions">
+                <span id="trial-status-pill" class="status-pill pill-neutral">Discovering</span>
+                <button id="btn-rescan-trial" class="btn btn-secondary btn-sm">Refresh Documents</button>
+              </div>
+            </div>
+
+            <!-- Workspace Tabs -->
+            <nav class="workspace-tabs" role="tablist">
+              <button class="tab-btn active" role="tab" data-tab="overview" aria-selected="true">Overview</button>
+              <button class="tab-btn" role="tab" data-tab="documents" aria-selected="false">
+                Documents <span id="tab-doc-count" class="tab-badge">0</span>
+              </button>
+              <button class="tab-btn" role="tab" data-tab="assistant" aria-selected="false">AI Assistant</button>
+            </nav>
+          </div>
+
+          <!-- Tab Contents -->
+          <div class="tab-panels">
+            <!-- 1. Overview Tab -->
+            <section id="tab-overview" class="tab-panel active" role="tabpanel">
+              <div class="overview-grid">
+                <div class="card">
+                  <h3>Trial Details</h3>
+                  <dl class="meta-list">
+                    <dt>Trial Folder</dt>
+                    <dd id="meta-folder-name">—</dd>
+                    <dt>Direct PDF Count</dt>
+                    <dd id="meta-pdf-count">0</dd>
+                    <dt>Retrieval Boundary</dt>
+                    <dd>Strictly scoped to this trial's documents</dd>
+                  </dl>
+                </div>
+                <div class="card">
+                  <h3>Document Index Status</h3>
+                  <p class="card-desc">PDF documents placed directly inside this trial folder are indexed for grounded question-answering.</p>
+                  <div class="status-summary" id="status-summary">
+                    <div class="summary-item">
+                      <span class="summary-label">Discovered</span>
+                      <span class="summary-value" id="summary-discovered">0</span>
+                    </div>
+                    <div class="summary-item">
+                      <span class="summary-label">Ready (Indexed)</span>
+                      <span class="summary-value" id="summary-ready">0</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- 2. Documents Tab -->
+            <section id="tab-documents" class="tab-panel hidden" role="tabpanel">
+              <div class="panel-toolbar">
+                <span class="panel-subtitle">Direct PDF Documents in this Trial</span>
+                <span class="read-only-notice">Read-Only Source Documents</span>
+              </div>
+              <div class="table-container">
+                <table class="doc-table">
+                  <thead>
+                    <tr>
+                      <th>Filename</th>
+                      <th>Size</th>
+                      <th>Modified (UTC)</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody id="documents-table-body">
+                    <tr><td colspan="4" class="empty-cell">No documents found.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <!-- 3. AI Assistant Tab (In-Trial Chatbot) -->
+            <section id="tab-assistant" class="tab-panel hidden" role="tabpanel">
+              <div class="assistant-container">
+                <!-- Context / Status Strip above Chat -->
+                <div class="assistant-status-strip" id="assistant-status-strip">
+                  <div class="strip-left">
+                    <span class="strip-trial-name" id="strip-trial-name">Trial_101</span>
+                    <span class="strip-separator">&bull;</span>
+                    <span class="strip-status" id="strip-status-text">Checking document vectors...</span>
+                  </div>
+                  <div class="strip-right">
+                    <button id="btn-new-chat" class="btn btn-secondary btn-xs">New Chat</button>
+                    <button id="btn-refresh-assistant" class="btn btn-secondary btn-xs">Refresh Vectors</button>
+                  </div>
+                </div>
+
+                <!-- Chat Transcript -->
+                <div class="chat-transcript" id="chat-transcript" role="log" aria-live="polite">
+                  <div class="system-message">
+                    <div class="system-bubble">
+                      <p><strong>Trial Assistant Ready.</strong></p>
+                      <p>Questions asked here are answered strictly using documents belonging to this trial. Switching trials will clear the visible chat and redirect retrieval scope.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Chat Input Composer -->
+                <form id="chat-form" class="chat-composer">
+                  <div class="composer-inner">
+                    <textarea
+                      id="chat-input"
+                      rows="2"
+                      placeholder="Ask a question about this trial's protocols or reports..."
+                      aria-label="Ask a question"
+                    ></textarea>
+                    <button type="submit" id="btn-send-chat" class="btn btn-primary" title="Send Question">
+                      <span>Send</span>
+                    </button>
+                  </div>
+                  <div class="composer-footer">
+                    <span class="grounding-notice">Answers are strictly grounded in this trial's PDFs. Citations include filename and 1-based page.</span>
+                  </div>
+                </form>
+              </div>
+            </section>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
