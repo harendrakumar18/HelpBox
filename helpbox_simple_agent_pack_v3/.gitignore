@@ -16,4 +16,7 @@ data/backups/
 *.sql
 
 # Keep the folder structure but do not commit real/company PDFs.
-data/trials/**/*.pdf
+# Ignore ALL trial documents and files, regardless of extension
+/data/trials/**
+!/data/trials/**/
+!/data/trials/**/.gitkeep
